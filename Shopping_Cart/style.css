@@ -1,0 +1,247 @@
+:root {
+  --grid-width: 1140px;
+  --gutter-horizontal: 2rem;
+  --base-font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a {
+  text-decoration: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: var(--grid-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-top: 3rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[class^="col-"]:not(:last-child) {
+  margin-right: var(--gutter-horizontal);
+}
+
+.col-1-of-3 {
+  width: calc((100% - 2 * var(--gutter-horizontal)) / 3);
+}
+.col-2-of-3 {
+  width: calc(
+    2 * ((100% - 2 * var(--gutter-horizontal)) / 3) + var(--gutter-horizontal)
+  );
+}
+
+.product__item [disabled="disabled"] {
+  cursor: default;
+  background-color: #113042;
+}
+
+.heading {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.product__heading {
+  text-align: left;
+}
+
+.cart__heading {
+  margin-bottom: 1rem;
+}
+
+.product__item {
+  border-bottom: 1px solid #cfcfcf;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+}
+
+.product__name {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.product__price {
+  font-size: 1.6rem;
+}
+
+.product__btn {
+  color: #fff;
+  background-color: #1a95ba;
+  display: inline-block;
+  border: none;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-left: 1rem;
+}
+
+.product__btn:disabled {
+  cursor: no-drop;
+  opacity: .4;
+}
+
+.cart {
+  background: #eee;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.cart__item {
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 1rem;
+}
+
+.cart__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.cart__block {
+  display: flex;
+  align-items: center;
+}
+
+.cart__block--first {
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+
+.cart__name {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.cart__price {
+  font-size: 1.8rem;
+}
+
+.cart__btn {
+  padding: .2rem .7rem;
+  border-radius: 5px;
+  border: 2px solid #1a95ba;
+  background-color: transparent;
+  color: #1a95ba;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.cart__available,
+.cart__total-title,
+.cart__total-price,
+.cart__quantity,
+.cart__empty
+{
+  font-size: 1.8rem;
+}
+
+.cart__total,
+.cart__empty{
+  //display: none;
+  margin-top: 2rem;
+}
+
+.cart__empty {
+  text-align: center;
+}
